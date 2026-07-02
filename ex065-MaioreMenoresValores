@@ -1,0 +1,15 @@
+cont = 0
+soma = 0
+while True:
+    num = int(input('Digite um valor: '))
+    continuar = input('Quer continuar [S/N]').upper()
+    cont += 1
+    soma += num
+    if continuar == 'N':
+        break
+    elif continuar == 'S':
+        continue
+    else:
+        print('Dígito inválido.')
+    
+print(f'Você digitou {cont} númeroes e a soma total é de {soma}')
