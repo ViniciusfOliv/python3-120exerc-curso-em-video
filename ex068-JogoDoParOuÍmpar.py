@@ -1,5 +1,6 @@
 from random import randint
 
+cont = 0
 soma = 0
 while True:
     jogador = int(input('Jogue um número de 1 a 10: '))
@@ -17,7 +18,9 @@ while True:
 
     venceu = (escolha == 'P' and par) or (escolha == 'I' and not par)
     if venceu:
-        print('Você venceu!')
+        cont +=1
+        
     else:
         print('Você perdeu!')
         break
+print(f'Você venceu {cont} vezes')
