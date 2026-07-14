@@ -1,28 +1,30 @@
 soma = 0
-valor_barato = 0
-nom_barato = ''
-cont_prod = 0
+quantidade = 0 
+nome_mais_barato = ''
+valor_mais_barato = 0
 
 while True:
-    produto = input('Digite o nome do produto: ')
-    valor_produto = float(input('Digite o valor do produto: '))
+    produto = input('qual o produto? ')
+    valor = float(input('digite o valor '))
 
-    soma += valor_produto
-
-    if valor_produto > 1000:
-        cont_prod += 1
+    soma += valor
     
-    if valor_barato <= 0:
-        valor_barato = valor_produto
-        nom_barato = produto
-    elif valor_produto < valor_barato:
-        valor_barato = valor_produto
-        nom_barato = produto
+    if valor > 1000:
+        quantidade += 1
+    
+    if valor_mais_barato == 0 or valor < valor_mais_barato: 
+        valor_mais_barato = valor 
+        nome_mais_barato = produto
+    
 
-    continuar = input('Quer continuar? [S/N]: ').upper()
+    continuar = input('deseja continuar? [S/N] ').upper()
     while continuar not in 'SN':
-        continuar = input('Quer continuar? [S/N]: ').upper()
-    if continuar == 'S':
-        continue
-    elif continuar == 'N':
+        print('digito invalido')
+        continuar = input('deseja continuar? [S/N] ').upper()
+
+    if continuar == 'N': 
         break
+print(f'o total gasto da compra é {soma}')
+print(f'a quantidade de produtos maior que mil é {quantidade}')
+print(f'o produto mais barato é {nome_mais_barato}, e valor é R$ {valor_mais_barato}')
+

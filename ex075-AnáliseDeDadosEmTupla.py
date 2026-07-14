@@ -3,26 +3,20 @@
 # B) Em que posião foi digitado o primeiro valor 3.
 # C) Quais foram os números pares.
 
+cont = 0
+tupla = ((int(input('Digite um número: '))),
+         int(input('Outro número: ')),
+         int(input('Mais um número: ')),
+         int(input('Último número: ')))
 
-valores = (int(input('Primeiro valor: ')),
-            int(input('Segundo valor: ')),
-            int(input('Terceiro valor: ')),
-            int(input('Quarto valor: ')))
 
-if 9 in valores:
-    print(f'O número nove apareceu {valores.count(9)} vezes')
-else:
-    print('Não existe numero 9')
 
-if 3 in valores:
-    print(f'O primeiro valor 3 está na posição {valores.index(3)}')
-else:
-    print('Não existe número 3')
+   
+for item in tupla:
+    if item % 2 == 0:
+        cont += 1
 
-print('Verificando números pares: ')
-for num in valores:
-    if num % 2 == 0:
-        print(f'{num} é par')
-    else:
-        print(f'Não existem números pares')
-        break
+print(f'O valor 9 apareceu {tupla.count(9)} vezes')
+if 3 in tupla:
+    print(f'O valor 3 apareceu na posição {tupla.index(3) + 1}º ')
+print(f'Os valores pares digitados foram {cont}')

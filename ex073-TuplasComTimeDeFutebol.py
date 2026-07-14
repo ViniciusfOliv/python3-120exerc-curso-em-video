@@ -5,12 +5,21 @@
 # D) Em que posição na tabela está o time do Corinthians
 
 times = ('Flamengo', 'Palmeiras', 'Bragantino', 'Cruzeiro', 'Fluminense', 'Internacional', 'Bahia', 'Botafogo', 'Ceará SC', 'São Paulo', 'Vasco da Gama', 'Corinthians', 'Juventude', 'Mirassol', 'Fortaleza', 'EC Vitória', 'Atlético-MG', 'Grêmio', 'Santos', 'Sport Recife')
-texto = 'ea'
-# 5 primeiros colocados
-print(f'Primeiros colocados: {times[0:5]}')
-# Os últimos 4 colocados
-print(f'Ultimos colocados: {times[16:20]}')
-# Lista em ordem alfabética
+print('-' * 20)
+print('Os 5 primeiros colocados do brasileirão: ')
+for time in times[:5]:
+    print(time)
+
+print('-' * 20)
+print('Os últimos 4 colocados na tabela')
+for c in range(-4, 0):
+    print(times[c])
+
+print('-' * 20)
+print('Todos os times em ordem alfabética: ')
 print(sorted(times))
-# Posição do Corinthians
-print(f'O Corinthians está na {times.index('Corinthians') + 1}ª posição.')
+
+print('-' * 20)
+for pos, time in enumerate(times):
+    if time == 'Corinthians':
+        print(pos + 1, time)
